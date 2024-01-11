@@ -1,0 +1,15 @@
+import requests 
+from pprint import pprint
+  
+def geocode(address): 
+    # url = "https://maps.googleapis.com/maps/api/geocode/json"
+    url="https://en.wikipedia.org/api/rest_v1/page/summary/Anantapur_district"
+    # resp = requests.get(url, params = {'address': address}) 
+    resp=requests.get(url)
+    return resp.json() 
+  
+# calling geocode function 
+data = geocode('India gate') 
+  
+# printing json response 
+pprint(data)  # pprint gives response in clear format while print gives response in not readable & user friendly format
